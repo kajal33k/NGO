@@ -11,15 +11,19 @@
     <p class="text-center mb-6">
         We at Gokul Dham Gau Sewa Mahatirth aim to provide shelter and medical services to the holy cows. It is our mission to provide medical attention and care to every single cow around India. If you wish to connect with us, you can reach us through the following ways:
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <input type="text" placeholder="Name" class="w-full p-2 border border-gray-300 rounded-md">
-        <input type="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded-md">
-        <input type="number" placeholder="Phone no." class="w-full p-2 border border-gray-300 rounded-md">
-        <textarea placeholder="Message" class="w-full p-2 border border-gray-300 rounded-md h-32"></textarea>
-    </div>
-    <div class="text-center mb-6">
-        <button class="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition duration-300 ease-in-out">Submit</button>
-    </div>
+    <form action="{{route('contactform')}}" method="POST">
+        @csrf
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <input type="text" name="Name" class="w-full p-2 border border-gray-300 rounded-md">
+            <input type="email" name="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded-md">
+            <input type="number" name="number" placeholder="Phone no." class="w-full p-2 border border-gray-300 rounded-md">
+            <textarea placeholder="Message" name="message" class="w-full p-2 border border-gray-300 rounded-md h-32"></textarea>
+        </div>
+        <div class="text-center mb-6">
+            <button class="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition duration-300 ease-in-out">Submit</button>
+        </div>
+    </form>
     <h1 class="text-center font-bold underline text-cyan-600 mb-4">Gau Sewa Dhaam</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white p-4 shadow-md rounded-md">
